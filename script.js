@@ -9,22 +9,22 @@ const slides = [
         src: 'assets/V1.mp4',
     },
     { 
-        type: 'video', 
-        src: 'assets/V2.mp4',
-    },
-    { 
         type: 'image', 
         src: 'assets/IM1.jpg', 
         duration: 10000 
     },
     { 
         type: 'video', 
-        src: 'assets/V3.mp4', 
+        src: 'assets/V2.mp4',
     },
     { 
         type: 'image', 
         src: 'assets/IM2.png', 
         duration: 10000 
+    },
+    { 
+        type: 'video', 
+        src: 'assets/V3.mp4', 
     },
 ];
 
@@ -62,7 +62,7 @@ function showNextSlide() {
             contentElement.src = slide.src;
             contentElement.autoplay = true; 
             contentElement.loop = false; // Video diputar sekali
-            contentElement.muted = true; // Penting untuk autoplay di browser modern
+            contentElement.muted = false; // Penting untuk autoplay di browser modern
             
             if (slide.duration) {
                 nextDuration = slide.duration;
