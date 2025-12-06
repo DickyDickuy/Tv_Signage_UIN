@@ -1,34 +1,31 @@
-// DAFTAR SLIDE ANDA
-// Sesuaikan 'src' dengan nama file media yang Anda miliki
-// 'duration' dalam milidetik (1000 ms = 1 detik)
 const slides = [
     { 
-        type: 'text', 
-        content: 'Selamat Datang di Ruang Kantor Kami. Utamakan Keselamatan dan Kerapian.', 
-        duration: 3000, 
-        style: 'background-color: #1a2a4b;' // Gaya tambahan untuk slide teks
-    },
-    { 
         type: 'image', 
-        src: 'assets/Screenshot 2025-05-05 213010.png', // Ganti dengan nama file gambar Anda
-        duration: 5000 
-    },
-    { 
-        type: 'text', 
-        content: 'Meeting Internal Divisi Marketing akan diadakan pukul 14:00 di Ruang Merapi.', 
-        duration: 5000,
-        style: 'background-color: #630000;'
+        src: 'assets/IM0.png', 
+        duration: 10000 
     },
     { 
         type: 'video', 
-        src: 'assets/3.mp4', // Ganti dengan nama file video Anda
-        duration: 5000 // Video akan diputar selama 5 detik. Hapus baris ini jika ingin memutar sampai selesai.
+        src: 'assets/V1.mp4',
+    },
+    { 
+        type: 'video', 
+        src: 'assets/V2.mp4',
     },
     { 
         type: 'image', 
-        src: 'assets/Screenshot 2025-05-11 125348.png', // Ganti dengan nama file gambar Anda
-        duration: 5000 
-    }
+        src: 'assets/IM1.jpg', 
+        duration: 10000 
+    },
+    { 
+        type: 'video', 
+        src: 'assets/V3.mp4', 
+    },
+    { 
+        type: 'image', 
+        src: 'assets/IM2.png', 
+        duration: 10000 
+    },
 ];
 
 let currentSlideIndex = 0;
@@ -52,7 +49,6 @@ function showNextSlide() {
             contentElement = document.createElement('div');
             contentElement.classList.add('slide-text');
             contentElement.textContent = slide.content;
-            // Terapkan style latar belakang ke kontainer untuk slide teks
             container.style.backgroundColor = slide.style ? slide.style.match(/background-color:\s*([^;]+)/i)[1] : '#000';
             contentElement.style = slide.style || ''; 
             nextDuration = slide.duration;
@@ -69,7 +65,6 @@ function showNextSlide() {
             contentElement.muted = true; // Penting untuk autoplay di browser modern
             
             if (slide.duration) {
-                // Jika durasi ditentukan, gunakan durasi tersebut
                 nextDuration = slide.duration;
             } else {
                 // Jika tidak ada durasi, tunggu video selesai
